@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=picEmbedded
+PROJECTNAME=Standard
 
 # Active Configuration
 DEFAULTCONF=default
