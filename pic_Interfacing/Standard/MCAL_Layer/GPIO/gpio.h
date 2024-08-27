@@ -1,6 +1,6 @@
 /* 
  * File:   gpio.h
- * Author: Mohamed Sameh
+ * Author: Salah-Eldin
  * 
  * Description:
  * This header file provides the interface and data structures for controlling GPIO pins and ports.
@@ -8,18 +8,22 @@
  * toggling, and initializing GPIO pins and ports. The header also defines various macros and enumerations
  * for easy manipulation of GPIO pins and ports.
  * 
- * Created on August 22, 2023, 11:09 PM
+ * Created on August 2, 2024
  */
 
 #ifndef GPIO_H
 #define	GPIO_H
 
-/* Section : Includes */
+//==================================================
+// Includes
+//==================================================
 #include <pic18f4620.h>
 #include "../std_types.h"
 #include "../device_config.h"
 
-/* Section : Macro Declarations */
+//==================================================
+// Macro Declarations
+//==================================================
 #define BIT_MASK       (uint8)1
 
 #define PORT_PIN_MAX_NUM    8
@@ -29,7 +33,9 @@
 #define GPIO_PORT_PIN_CONFIGURATION   CONFIG_ENABLE
 #define GPIO_PORT_CONFIGURATION       CONFIG_ENABLE
 
-/* Section : Macro Functions Declarations */
+//==================================================
+// Macro Functions Declarations 
+//==================================================
 #define HWREG8(X)      (*((volatile uint8*)(X)))
 
 #define REGISTER_SIZE 8
@@ -40,7 +46,9 @@
 #define IS_BIT_SET(REG,BIT_POS)  ((REG & (BIT_MASK << BIT_POS)) >> BIT_POS)
 #define IS_BIT_CLR(REG,BIT_POS)  (!((REG & (BIT_MASK << BIT_POS)) >> BIT_POS))
 
-/* Section : Data Types Declarations  */
+//==================================================
+// Data Types Declarations
+//==================================================
 typedef enum
 {
     GPIO_LOW = 0,
@@ -82,7 +90,9 @@ typedef struct
     uint8 logic : 1;        // @ref logic_t
 } pin_config_t;
 
-/* Section : Functions Declarations */
+//==================================================
+// Functions Declarations
+//==================================================
 /**
  * @brief Sets the direction of a GPIO pin.
  * 

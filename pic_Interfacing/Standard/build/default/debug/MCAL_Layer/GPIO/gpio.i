@@ -9,7 +9,7 @@
 # 1 "MCAL_Layer/GPIO/gpio.c" 2
 # 18 "MCAL_Layer/GPIO/gpio.c"
 # 1 "MCAL_Layer/GPIO/gpio.h" 1
-# 18 "MCAL_Layer/GPIO/gpio.h"
+# 20 "MCAL_Layer/GPIO/gpio.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc\\pic18f4620.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc\\pic18f4620.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\__at.h" 1 3
@@ -4222,7 +4222,7 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 18 "MCAL_Layer/GPIO/gpio.h" 2
+# 20 "MCAL_Layer/GPIO/gpio.h" 2
 
 # 1 "MCAL_Layer/GPIO/../std_types.h" 1
 # 14 "MCAL_Layer/GPIO/../std_types.h"
@@ -4737,11 +4737,11 @@ typedef enum {
     INDEX6,
     INDEX7
 } array_indexs;
-# 19 "MCAL_Layer/GPIO/gpio.h" 2
+# 21 "MCAL_Layer/GPIO/gpio.h" 2
 
 # 1 "MCAL_Layer/GPIO/../device_config.h" 1
-# 20 "MCAL_Layer/GPIO/gpio.h" 2
-# 44 "MCAL_Layer/GPIO/gpio.h"
+# 22 "MCAL_Layer/GPIO/gpio.h" 2
+# 52 "MCAL_Layer/GPIO/gpio.h"
 typedef enum
 {
     GPIO_LOW = 0,
@@ -4782,27 +4782,27 @@ typedef struct
     uint8 direction : 1;
     uint8 logic : 1;
 } pin_config_t;
-# 97 "MCAL_Layer/GPIO/gpio.h"
+# 107 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_set_direction(const pin_config_t *pin);
-# 111 "MCAL_Layer/GPIO/gpio.h"
+# 121 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_get_direction(const pin_config_t *pin, direction_t *direction_status);
-# 126 "MCAL_Layer/GPIO/gpio.h"
+# 136 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_write(const pin_config_t *pin, logic_t logic);
-# 140 "MCAL_Layer/GPIO/gpio.h"
+# 150 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_read(const pin_config_t *pin, logic_t *logic);
-# 153 "MCAL_Layer/GPIO/gpio.h"
+# 163 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_toggle(const pin_config_t *pin);
-# 166 "MCAL_Layer/GPIO/gpio.h"
+# 176 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_pin_initialize(const pin_config_t *pin);
-# 180 "MCAL_Layer/GPIO/gpio.h"
+# 190 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_port_set_direction(port_index_t port, uint8 direction);
-# 194 "MCAL_Layer/GPIO/gpio.h"
+# 204 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_port_get_direction(port_index_t port, uint8 *direction_status);
-# 208 "MCAL_Layer/GPIO/gpio.h"
+# 218 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_port_write(port_index_t port, uint8 logic);
-# 222 "MCAL_Layer/GPIO/gpio.h"
+# 232 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_port_read(port_index_t port, uint8 *logic);
-# 235 "MCAL_Layer/GPIO/gpio.h"
+# 245 "MCAL_Layer/GPIO/gpio.h"
 Std_ReturnType gpio_port_toggle(port_index_t port);
 # 18 "MCAL_Layer/GPIO/gpio.c" 2
 

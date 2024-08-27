@@ -403,3 +403,42 @@ static Std_ReturnType lcd_8bit_set_cursor(const lcd_8bit_t *lcd, uint8 row, uint
 }
 
 #endif
+
+Std_ReturnType convert_uint8_to_string(uint8 value, uint8 *str){
+    Std_ReturnType ret = E_OK;
+
+    if (NULL == str) {
+        ret = E_NOT_OK;
+    } else {
+        memset(str,0,4);
+        sprintf(str,"%d",value);
+    }
+    
+    return ret;
+}
+
+Std_ReturnType convert_uint16_to_string(uint16 value, uint8 *str){
+    Std_ReturnType ret = E_OK;
+
+    if (NULL == str) {
+        ret = E_NOT_OK;
+    } else {
+        memset(str,0,6);
+        sprintf(str,"%d",value);
+    }
+    
+    return ret;
+}
+
+Std_ReturnType convert_uint32_to_string(uint32 value, uint16 *str){
+    Std_ReturnType ret = E_OK;
+
+    if (NULL == str) {
+        ret = E_NOT_OK;
+    } else {
+        memset(str,0,11);
+        sprintf(str,"%d",value);
+    }
+    
+    return ret;
+}
