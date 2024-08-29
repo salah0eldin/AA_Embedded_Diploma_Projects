@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "MCAL_Layer/ADC/adc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,272 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 8 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
-
-int atoi (const char *);
-long atol (const char *);
-
-long long atoll (const char *);
-
-double atof (const char *);
-
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
-
-
-
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
-
-
-unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
-
-unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
-int rand (void);
-void srand (unsigned);
-
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
-
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-
-
-
-
-
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-
-long long llabs (long long);
-
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-
-typedef struct { long long quot, rem; } lldiv_t;
-
-
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-
-lldiv_t lldiv (long long, long long);
-
-
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "main.c" 2
-
-
-# 1 "./APP/application.h" 1
-# 11 "./APP/application.h"
-# 1 "./APP/../ECU_Layer/LED/led.h" 1
-# 18 "./APP/../ECU_Layer/LED/led.h"
-# 1 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h" 1
-# 20 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 1 "MCAL_Layer/ADC/adc.c" 2
+# 11 "MCAL_Layer/ADC/adc.c"
+# 1 "MCAL_Layer/ADC/adc.h" 1
+# 14 "MCAL_Layer/ADC/adc.h"
+# 1 "MCAL_Layer/ADC/../GPIO/gpio.h" 1
+# 20 "MCAL_Layer/ADC/../GPIO/gpio.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc\\pic18f4620.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc\\pic18f4620.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\__at.h" 1 3
@@ -4484,12 +4224,12 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 20 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h" 2
+# 20 "MCAL_Layer/ADC/../GPIO/gpio.h" 2
 
-# 1 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_types.h" 1
-# 14 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_types.h"
-# 1 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 14 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "MCAL_Layer/ADC/../GPIO/../std_types.h" 1
+# 14 "MCAL_Layer/ADC/../GPIO/../std_types.h"
+# 1 "MCAL_Layer/ADC/../GPIO/../compiler.h" 1
+# 14 "MCAL_Layer/ADC/../GPIO/../compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4499,7 +4239,112 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+
+long long atoll (const char *);
+
+double atof (const char *);
+
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+
+unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
+
+unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
+# 55 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+
+long long llabs (long long);
+
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+
+typedef struct { long long quot, rem; } lldiv_t;
+
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+
+lldiv_t lldiv (long long, long long);
+
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 2 3
+
+
+
+
+
+
+
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 23 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
@@ -4653,11 +4498,166 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 14 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 14 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_types.h" 2
+# 14 "MCAL_Layer/ADC/../GPIO/../compiler.h" 2
+# 14 "MCAL_Layer/ADC/../GPIO/../std_types.h" 2
 
-# 1 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 16 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "MCAL_Layer/ADC/../GPIO/../std_libraries.h" 1
+# 14 "MCAL_Layer/ADC/../GPIO/../std_libraries.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 14 "MCAL_Layer/ADC/../GPIO/../std_libraries.h" 2
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4715,9 +4715,9 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 16 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 15 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_types.h" 2
-# 44 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_types.h"
+# 16 "MCAL_Layer/ADC/../GPIO/../std_libraries.h" 2
+# 15 "MCAL_Layer/ADC/../GPIO/../std_types.h" 2
+# 44 "MCAL_Layer/ADC/../GPIO/../std_types.h"
 typedef unsigned char boolean;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -4739,11 +4739,11 @@ typedef enum {
     INDEX6,
     INDEX7
 } array_indexs;
-# 21 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h" 2
+# 21 "MCAL_Layer/ADC/../GPIO/gpio.h" 2
 
-# 1 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 22 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h" 2
-# 52 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 1 "MCAL_Layer/ADC/../GPIO/../device_config.h" 1
+# 22 "MCAL_Layer/ADC/../GPIO/gpio.h" 2
+# 52 "MCAL_Layer/ADC/../GPIO/gpio.h"
 typedef enum
 {
     GPIO_LOW = 0,
@@ -4784,230 +4784,46 @@ typedef struct
     uint8 direction : 1;
     uint8 logic : 1;
 } pin_config_t;
-# 107 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 107 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_set_direction(const pin_config_t *pin);
-# 121 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 121 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_get_direction(const pin_config_t *pin, direction_t *direction_status);
-# 136 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 136 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_write(const pin_config_t *pin, logic_t logic);
-# 150 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 150 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_read(const pin_config_t *pin, logic_t *logic);
-# 163 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 163 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_toggle(const pin_config_t *pin);
-# 176 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 176 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_pin_initialize(const pin_config_t *pin);
-# 190 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 190 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_set_direction(port_index_t port, uint8 direction);
-# 204 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 204 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_get_direction(port_index_t port, uint8 *direction_status);
-# 218 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 218 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_write(port_index_t port, uint8 logic);
-# 232 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 232 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_read(port_index_t port, uint8 *logic);
-# 245 "./APP/../ECU_Layer/LED/../../MCAL_Layer/GPIO/gpio.h"
+# 245 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_toggle(port_index_t port);
-# 19 "./APP/../ECU_Layer/LED/led.h" 2
-# 1 "./APP/../ECU_Layer/LED/led_config.h" 1
-# 20 "./APP/../ECU_Layer/LED/led.h" 2
-# 32 "./APP/../ECU_Layer/LED/led.h"
-typedef enum {
-    LED_OFF = 0,
-    LED_ON
-} led_status;
-
-typedef enum {
-    LED_POSITIVE = 0,
-    LED_NEGATIVE
-} led_connection;
-
-typedef struct {
-    uint8 port : 3;
-    uint8 pin : 3;
-    uint8 connection : 1;
-    uint8 led_status : 1;
-} led_t;
-# 60 "./APP/../ECU_Layer/LED/led.h"
-Std_ReturnType led_init(const led_t *led);
-# 70 "./APP/../ECU_Layer/LED/led.h"
-Std_ReturnType led_turn_on(const led_t *led);
-# 80 "./APP/../ECU_Layer/LED/led.h"
-Std_ReturnType led_turn_off(const led_t *led);
-# 90 "./APP/../ECU_Layer/LED/led.h"
-Std_ReturnType led_toggle(const led_t *led);
-# 11 "./APP/application.h" 2
-
-# 1 "./APP/../ECU_Layer/7_Seg/seven_seg.h" 1
-# 22 "./APP/../ECU_Layer/7_Seg/seven_seg.h"
-# 1 "./APP/../ECU_Layer/7_Seg/seven_seg_cfg.h" 1
-# 23 "./APP/../ECU_Layer/7_Seg/seven_seg.h" 2
-# 40 "./APP/../ECU_Layer/7_Seg/seven_seg.h"
-typedef enum
-{
-    SEG_COMMON_ANODE,
-    SEG_COMMON_CATHODE
-}seg_type_t;
-
-typedef struct
-{
-    pin_config_t seg_pins[4];
-    seg_type_t seg_type;
-}seg_t;
-# 64 "./APP/../ECU_Layer/7_Seg/seven_seg.h"
-Std_ReturnType seven_seg_init(const seg_t *seg);
-# 75 "./APP/../ECU_Layer/7_Seg/seven_seg.h"
-Std_ReturnType seven_seg_write_number(const seg_t *seg, uint8 number);
-# 12 "./APP/application.h" 2
-
-# 1 "./APP/../ECU_Layer/Keypad/keypad.h" 1
-# 17 "./APP/../ECU_Layer/Keypad/keypad.h"
-# 1 "./APP/../ECU_Layer/Keypad/keypad_cfg.h" 1
-# 18 "./APP/../ECU_Layer/Keypad/keypad.h" 2
-# 31 "./APP/../ECU_Layer/Keypad/keypad.h"
-typedef struct
-{
-    pin_config_t keypad_rows_pins[4];
-    pin_config_t keypad_columns_pins[4];
-} keypad_t;
-# 49 "./APP/../ECU_Layer/Keypad/keypad.h"
-Std_ReturnType keypad_init(keypad_t *keypad);
-# 60 "./APP/../ECU_Layer/Keypad/keypad.h"
-Std_ReturnType keypad_get_value(const keypad_t *keypad, uint8 *value);
-# 13 "./APP/application.h" 2
-
-# 1 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h" 1
-# 15 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-# 1 "./APP/../ECU_Layer/Chr_LCD/chr_lcd_cfg.h" 1
-# 16 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h" 2
-# 52 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-typedef struct
-{
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-    pin_config_t lcd_data[4];
-} lcd_4bit_t;
-# 77 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-Std_ReturnType lcd_4bit_init(lcd_4bit_t *lcd);
-
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_cmd(const lcd_4bit_t *lcd, uint8 cmd);
-
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_char(const lcd_4bit_t *lcd, uint8 data);
-# 103 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-Std_ReturnType lcd_4bit_send_char_pos(const lcd_4bit_t *lcd, uint8 data, uint8 row, uint8 column);
-
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_string(const lcd_4bit_t *lcd, uint8 *str);
-# 121 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-Std_ReturnType lcd_4bit_send_string_pos(const lcd_4bit_t *lcd, uint8 *str, uint8 row, uint8 column);
-# 132 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-Std_ReturnType lcd_4bit_send_custom_char(const lcd_4bit_t *lcd, const uint8 chr[],
-                                        uint8 row, uint8 column, uint8 mem_pos);
-# 151 "./APP/../ECU_Layer/Chr_LCD/chr_lcd.h"
-Std_ReturnType convert_uint8_to_string(uint8 value, uint8 *str);
-
-
-
-
-
-
-
-Std_ReturnType convert_uint16_to_string(uint16 value, uint8 *str);
-
-
-
-
-
-
-
-Std_ReturnType convert_uint32_to_string(uint32 value, uint16 *str);
-# 14 "./APP/application.h" 2
-
-
-# 1 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h" 1
-# 13 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-# 1 "./APP/../MCAL_Layer/Interrupt/interrupt_config.h" 1
-# 14 "./APP/../MCAL_Layer/Interrupt/interrupt_config.h"
-# 1 "./APP/../MCAL_Layer/Interrupt/interrupt_gen_config.h" 1
-# 15 "./APP/../MCAL_Layer/Interrupt/interrupt_config.h" 2
-# 62 "./APP/../MCAL_Layer/Interrupt/interrupt_config.h"
+# 15 "MCAL_Layer/ADC/adc.h" 2
+# 1 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h" 1
+# 14 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h"
+# 1 "MCAL_Layer/ADC/../interrupt/interrupt_config.h" 1
+# 14 "MCAL_Layer/ADC/../interrupt/interrupt_config.h"
+# 1 "MCAL_Layer/ADC/../interrupt/interrupt_gen_config.h" 1
+# 15 "MCAL_Layer/ADC/../interrupt/interrupt_config.h" 2
+# 62 "MCAL_Layer/ADC/../interrupt/interrupt_config.h"
 typedef enum
 {
     INTERRUPT_LOW_PRIORITY = 0,
     INTERRUPT_HIGH_PRIORITY,
 }interrupt_priority;
-# 14 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h" 2
-# 85 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-typedef enum
-{
-    INTERRUPT_FALLING_EDGE = 0,
-    INTERRUPT_RISING_EDGE,
-}interrupt_INTx_EDGE;
-
-typedef enum
-{
-    INTERRUPT_EXTERNAL_INT0 = 0,
-    INTERRUPT_EXTERNAL_INT1,
-    INTERRUPT_EXTERNAL_INT2,
-}interrupt_INTx_scr;
-
-typedef struct
-{
-    void (* EXT_InterruptHandler)(void);
-    pin_config_t pin;
-    interrupt_INTx_scr source;
-    interrupt_priority priority;
-    interrupt_INTx_EDGE edge;
-}ext_interrupt_INTx_t;
-
-typedef struct
-{
-    void (*EXT_InterruptHandler_HIGH)(void);
-    void (*EXT_InterruptHandler_LOW)(void);
-    pin_config_t pin;
-    interrupt_priority priority;
-}ext_interrupt_RBx_t;
-# 130 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-Std_ReturnType Interrupt_INTx_Init(const ext_interrupt_INTx_t *ext_int);
-# 143 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-Std_ReturnType Interrupt_INTx_DeInit(const ext_interrupt_INTx_t *ext_int);
-# 159 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-Std_ReturnType Interrupt_RBx_Init(const ext_interrupt_RBx_t *ext_int);
-# 172 "./APP/../MCAL_Layer/Interrupt/external_interrupt.h"
-Std_ReturnType Interrupt_RBx_DeInit(const ext_interrupt_RBx_t *ext_int);
-# 16 "./APP/application.h" 2
-
-# 1 "./APP/../MCAL_Layer/EEPROM/eeprom.h" 1
-# 14 "./APP/../MCAL_Layer/EEPROM/eeprom.h"
-# 1 "./APP/../MCAL_Layer/EEPROM/../Interrupt/internal_interrupt.h" 1
-# 15 "./APP/../MCAL_Layer/EEPROM/eeprom.h" 2
-# 53 "./APP/../MCAL_Layer/EEPROM/eeprom.h"
-Std_ReturnType EEPROM_WriteByte(uint16 bAdd, uint8 bData);
-# 64 "./APP/../MCAL_Layer/EEPROM/eeprom.h"
-Std_ReturnType EEPROM_ReadByte(uint16 bAdd, uint8 *bData);
-# 17 "./APP/application.h" 2
-# 11 "main.c" 2
-
-# 1 "./MCAL_Layer/ADC/adc.h" 1
-# 16 "./MCAL_Layer/ADC/adc.h"
-# 1 "./MCAL_Layer/ADC/adc_cfg.h" 1
-# 17 "./MCAL_Layer/ADC/adc.h" 2
-# 92 "./MCAL_Layer/ADC/adc.h"
+# 15 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h" 2
+# 16 "MCAL_Layer/ADC/adc.h" 2
+# 1 "MCAL_Layer/ADC/adc_cfg.h" 1
+# 17 "MCAL_Layer/ADC/adc.h" 2
+# 92 "MCAL_Layer/ADC/adc.h"
 typedef enum {
     ADC_RESULT_RIGHT = 0,
     ADC_RESULT_LEFT
@@ -5082,87 +4898,228 @@ typedef struct {
     uint8 volt_N_reference : 1;
     uint8 : 6;
 } adc_config_t;
-# 181 "./MCAL_Layer/ADC/adc.h"
+# 181 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Init(const adc_config_t *adc);
-# 191 "./MCAL_Layer/ADC/adc.h"
+# 191 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_DeInit(const adc_config_t *adc);
-# 204 "./MCAL_Layer/ADC/adc.h"
+# 204 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Select_Channel(const adc_config_t *adc, adc_channel_t channel);
-# 214 "./MCAL_Layer/ADC/adc.h"
+# 214 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Start(const adc_config_t *adc);
-# 227 "./MCAL_Layer/ADC/adc.h"
+# 227 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_IsDone(const adc_config_t *adc, uint8 *adc_status);
-# 238 "./MCAL_Layer/ADC/adc.h"
+# 238 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Get_Result(const adc_config_t *adc, uint16 *adc_res);
-# 253 "./MCAL_Layer/ADC/adc.h"
+# 253 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Get_Conversion_Blocking(const adc_config_t *adc, adc_channel_t channel,
         uint16 *adc_res);
-# 268 "./MCAL_Layer/ADC/adc.h"
+# 268 "MCAL_Layer/ADC/adc.h"
 Std_ReturnType ADC_Start_Conversion_Interrupt(const adc_config_t *adc, adc_channel_t channel);
-# 12 "main.c" 2
+# 12 "MCAL_Layer/ADC/adc.c" 2
 
 
-led_t led1 = {
-    .port = PORTA_INDEX,
-    .pin = PIN1,
-    .connection = LED_POSITIVE,
-    .led_status = LED_ON
-};
 
-lcd_4bit_t lcd1 = {
-    .lcd_rs.port = PORTD_INDEX,
-    .lcd_rs.pin_num = PIN5,
 
-    .lcd_en.port = PORTD_INDEX,
-    .lcd_en.pin_num = PIN4,
 
-    .lcd_data[INDEX0].port = PORTD_INDEX,
-    .lcd_data[INDEX0].pin_num = PIN3,
-    .lcd_data[INDEX1].port = PORTD_INDEX,
-    .lcd_data[INDEX1].pin_num = PIN2,
-    .lcd_data[INDEX2].port = PORTD_INDEX,
-    .lcd_data[INDEX2].pin_num = PIN1,
-    .lcd_data[INDEX3].port = PORTD_INDEX,
-    .lcd_data[INDEX3].pin_num = PIN0,
 
-};
 
-adc_config_t adc1 = {
-    .acq_time = ADC_12_TAD,
-    .clock = ADC_CLOCK_FOSC_DIV_16,
-    .channel = ADC_CHANNEL_AN0,
-    .res_format = ADC_RESULT_RIGHT,
-    .volt_P_reference = 0x00U,
-    .volt_N_reference = 0x00U
-};
+static __attribute__((inline)) void ADC_Input_Channel_Pin_Config(adc_channel_t channel);
+static __attribute__((inline)) void ADC_Select_Result_Format(const adc_config_t *adc);
+static __attribute__((inline)) void ADC_Select_Volt_Ref(const adc_config_t *adc);
+# 37 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Init(const adc_config_t *adc) {
+    Std_ReturnType ret = 0x01;
 
-int main() {
-    led_init(&led1);
+    if (((void*)0) == adc) {
+        ret = 0x00;
+    } else {
 
-    lcd_4bit_init(&lcd1);
+        (ADCON0bits.ADON = 0);
 
-    lcd_4bit_send_char(&lcd1, 'A');
+        ADCON2bits.ACQT = adc->acq_time;
 
-    lcd_4bit_send_char_pos(&lcd1, 'C', 1, 2);
+        ADCON2bits.ADCS = adc->clock;
 
-    (ADCON1bits.PCFG = 0x0E);
-    ADC_Init(&adc1);
+        ADCON0bits.CHS = adc->channel;
+        ADC_Input_Channel_Pin_Config(adc->channel);
+# 75 "MCAL_Layer/ADC/adc.c"
+        ADC_Select_Result_Format(adc);
 
-    uint16 adc_res = 0;
+        ADC_Select_Volt_Ref(adc);
 
-    volatile Std_ReturnType ret = 0x01;
-
-    for (;;) {
-        led_turn_on(&led1);
-        _delay((unsigned long)((100)*(4000000UL/4000.0)));
-        led_turn_off(&led1);
-        _delay((unsigned long)((100)*(4000000UL/4000.0)));
-        ADC_Get_Conversion_Blocking(&adc1,ADC_CHANNEL_AN0,&adc_res);
-        uint8 buff[6] = {0};
-        convert_uint16_to_string(adc_res,buff);
-        lcd_4bit_send_string_pos(&lcd1,buff,1,1);
-        lcd_4bit_send_string(&lcd1,"     ");
+        (ADCON0bits.ADON = 1);
     }
+    return ret;
+}
+# 92 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_DeInit(const adc_config_t *adc) {
+    Std_ReturnType ret = 0x01;
 
-    return (0);
+    if (((void*)0) == adc) {
+        ret = 0x00;
+    } else {
+
+        (ADCON0bits.ADON = 0);
+
+
+
+
+
+    }
+    return ret;
+}
+# 120 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Select_Channel(const adc_config_t *adc, adc_channel_t channel) {
+    Std_ReturnType ret = 0x01;
+
+    if (((void*)0) == adc) {
+        ret = 0x00;
+    } else {
+
+        ADCON0bits.CHS = channel;
+        ADC_Input_Channel_Pin_Config(channel);
+    }
+    return ret;
+}
+# 141 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Start(const adc_config_t *adc) {
+    Std_ReturnType ret = 0x01;
+
+    if (((void*)0) == adc) {
+        ret = 0x00;
+    } else {
+        (ADCON0bits.GODONE = 1);
+    }
+    return ret;
+}
+# 163 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_IsDone(const adc_config_t *adc, uint8 *adc_status) {
+    Std_ReturnType ret = 0x01;
+
+    if (((void*)0) == adc || ((void*)0) == adc_status) {
+        ret = 0x00;
+    } else {
+        *adc_status = (uint8)!((ADCON0bits.GODONE));
+    }
+    return ret;
+}
+# 183 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Get_Result(const adc_config_t *adc, uint16 *adc_res) {
+    Std_ReturnType ret = 0x01;
+
+    if (((void*)0) == adc || ((void*)0) == adc_res) {
+        ret = 0x00;
+    } else {
+        if (ADC_RESULT_RIGHT == adc->res_format) {
+            *adc_res = (uint16) ((ADRESH << 8) + ADRESL);
+        } else if (ADC_RESULT_LEFT == adc->res_format) {
+            *adc_res = (uint16) (((ADRESH << 8) + ADRESL) >> 6);
+        }
+    }
+    return ret;
+}
+# 211 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Get_Conversion_Blocking(const adc_config_t *adc, adc_channel_t channel,
+        uint16 *adc_res) {
+    Std_ReturnType ret = 0x01;
+    uint8 l_conv_status = 0;
+
+    if (((void*)0) == adc || ((void*)0) == adc_res) {
+        ret = 0x00;
+    } else {
+
+        ret = ADC_Select_Channel(adc, channel);
+
+        ret = ADC_Start(adc);
+
+        while ((ADCON0bits.GODONE));
+
+        ret = ADC_Get_Result(adc, adc_res);
+    }
+    return ret;
+}
+# 244 "MCAL_Layer/ADC/adc.c"
+Std_ReturnType ADC_Start_Conversion_Interrupt(const adc_config_t *adc, adc_channel_t channel) {
+    Std_ReturnType ret = 0x01;
+    uint8 l_conv_status = 0;
+
+    if (((void*)0) == adc) {
+        ret = 0x00;
+    } else {
+
+        ret = ADC_Select_Channel(adc, channel);
+
+        ret = ADC_Start(adc);
+    }
+    return ret;
+}
+# 268 "MCAL_Layer/ADC/adc.c"
+static __attribute__((inline)) void ADC_Input_Channel_Pin_Config(adc_channel_t channel) {
+
+    switch (channel) {
+        case ADC_CHANNEL_AN0: (TRISA |= ((uint8)1 << 0x0));
+            break;
+        case ADC_CHANNEL_AN1: (TRISA |= ((uint8)1 << 0x1));
+            break;
+        case ADC_CHANNEL_AN2: (TRISA |= ((uint8)1 << 0x2));
+            break;
+        case ADC_CHANNEL_AN3: (TRISA |= ((uint8)1 << 0x3));
+            break;
+        case ADC_CHANNEL_AN4: (TRISA |= ((uint8)1 << 0x5));
+            break;
+
+        case ADC_CHANNEL_AN5: (TRISE |= ((uint8)1 << 0x0));
+            break;
+        case ADC_CHANNEL_AN6: (TRISE |= ((uint8)1 << 0x1));
+            break;
+        case ADC_CHANNEL_AN7: (TRISE |= ((uint8)1 << 0x2));
+            break;
+
+        case ADC_CHANNEL_AN8: (TRISB |= ((uint8)1 << 0x2));
+            break;
+        case ADC_CHANNEL_AN9: (TRISB |= ((uint8)1 << 0x3));
+            break;
+        case ADC_CHANNEL_AN10: (TRISB |= ((uint8)1 << 0x1));
+            break;
+        case ADC_CHANNEL_AN11: (TRISB |= ((uint8)1 << 0x4));
+            break;
+        case ADC_CHANNEL_AN12: (TRISB |= ((uint8)1 << 0x0));
+            break;
+        default: break;
+    }
+}
+
+
+
+
+
+
+static __attribute__((inline)) void ADC_Select_Result_Format(const adc_config_t *adc) {
+    if (ADC_RESULT_RIGHT == adc->res_format) {
+        (ADCON2bits.ADFM = 1);
+    } else if (ADC_RESULT_LEFT == adc->res_format) {
+        (ADCON2bits.ADFM = 0);
+    } else (ADCON2bits.ADFM = 1);
+}
+
+
+
+
+
+
+static __attribute__((inline)) void ADC_Select_Volt_Ref(const adc_config_t *adc) {
+    if (0x01U == adc->volt_P_reference) {
+        (ADCON1bits.VCFG0 = 1);
+    } else {
+        (ADCON1bits.VCFG0 = 0);
+    }
+    if (0x01U == adc->volt_N_reference) {
+        (ADCON1bits.VCFG1 = 1);
+    } else {
+        (ADCON1bits.VCFG1 = 0);
+    }
+}
+# 343 "MCAL_Layer/ADC/adc.c"
+void ADC_ISR(void) {
+# 354 "MCAL_Layer/ADC/adc.c"
 }
