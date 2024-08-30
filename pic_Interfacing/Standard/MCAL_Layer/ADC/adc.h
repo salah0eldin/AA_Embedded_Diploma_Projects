@@ -12,7 +12,7 @@
 // Includes
 //==================================================
 #include "../GPIO/gpio.h"
-#include "../interrupt/internal_interrupt.h"
+#include "../Interrupt/internal_interrupt.h"
 #include "adc_cfg.h"
 
 //==================================================

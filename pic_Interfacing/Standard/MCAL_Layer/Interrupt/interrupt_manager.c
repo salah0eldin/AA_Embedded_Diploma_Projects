@@ -124,26 +124,26 @@ void __interrupt() InterruptManager(void)
 //        ADC_ISR(); /* ADC INTERRUPT */
 //    }
 //
-//    /*_________________________ TIMER START _________________________________*/
-//    if(INTERRUPT_ENABLE == INTCONbits.TMR0IE && INTERRUPT_OCCURR == INTCONbits.TMR0IF)
-//    {
-//        TMR0_ISR(); /* TIMER0 INTERRUPT */
-//    }
-//
-//    if(INTERRUPT_ENABLE == PIE1bits.TMR1IE && INTERRUPT_OCCURR == PIR1bits.TMR1IF)
-//    {
-//        TMR1_ISR(); /* TIMER1 INTERRUPT */
-//    }
-//
-//    if(INTERRUPT_ENABLE == PIE1bits.TMR2IE && INTERRUPT_OCCURR == PIR1bits.TMR2IF)
-//    {
-//        TMR2_ISR(); /* TIMER2 INTERRUPT */
-//    }
-//
-//    if(INTERRUPT_ENABLE == PIE2bits.TMR3IE && INTERRUPT_OCCURR == PIR2bits.TMR3IF)
-//    {
-//        TMR3_ISR(); /* TIMER3 INTERRUPT */
-//    }
+    /*_________________________ TIMER START _________________________________*/
+    if(INTERRUPT_ENABLE == INTCONbits.TMR0IE && INTERRUPT_OCCURR == INTCONbits.TMR0IF)
+    {
+        TIMR0_ISR(); /* TIMER0 INTERRUPT */
+    }
+
+    if(INTERRUPT_ENABLE == PIE1bits.TMR1IE && INTERRUPT_OCCURR == PIR1bits.TMR1IF)
+    {
+        TIMR1_ISR(); /* TIMER1 INTERRUPT */
+    }
+
+    if(INTERRUPT_ENABLE == PIE1bits.TMR2IE && INTERRUPT_OCCURR == PIR1bits.TMR2IF)
+    {
+        TIMR2_ISR(); /* TIMER2 INTERRUPT */
+    }
+
+    if(INTERRUPT_ENABLE == PIE2bits.TMR3IE && INTERRUPT_OCCURR == PIR2bits.TMR3IF)
+    {
+        TIMR3_ISR(); /* TIMER3 INTERRUPT */
+    }
 //    /*_________________________ TIMER END _________________________________*/
 //    /*_________________________ CCP START _________________________________*/
 //    if(INTERRUPT_ENABLE == PIE1bits.CCP1IE && INTERRUPT_OCCURR == PIR1bits.CCP1IF)

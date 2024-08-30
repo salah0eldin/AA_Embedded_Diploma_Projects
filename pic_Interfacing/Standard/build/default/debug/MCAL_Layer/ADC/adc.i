@@ -4807,19 +4807,19 @@ Std_ReturnType gpio_port_read(port_index_t port, uint8 *logic);
 # 245 "MCAL_Layer/ADC/../GPIO/gpio.h"
 Std_ReturnType gpio_port_toggle(port_index_t port);
 # 15 "MCAL_Layer/ADC/adc.h" 2
-# 1 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h" 1
-# 14 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h"
-# 1 "MCAL_Layer/ADC/../interrupt/interrupt_config.h" 1
-# 14 "MCAL_Layer/ADC/../interrupt/interrupt_config.h"
-# 1 "MCAL_Layer/ADC/../interrupt/interrupt_gen_config.h" 1
-# 15 "MCAL_Layer/ADC/../interrupt/interrupt_config.h" 2
-# 62 "MCAL_Layer/ADC/../interrupt/interrupt_config.h"
+# 1 "MCAL_Layer/ADC/../Interrupt/internal_interrupt.h" 1
+# 14 "MCAL_Layer/ADC/../Interrupt/internal_interrupt.h"
+# 1 "MCAL_Layer/ADC/../Interrupt/interrupt_config.h" 1
+# 14 "MCAL_Layer/ADC/../Interrupt/interrupt_config.h"
+# 1 "MCAL_Layer/ADC/../Interrupt/interrupt_gen_config.h" 1
+# 15 "MCAL_Layer/ADC/../Interrupt/interrupt_config.h" 2
+# 62 "MCAL_Layer/ADC/../Interrupt/interrupt_config.h"
 typedef enum
 {
     INTERRUPT_LOW_PRIORITY = 0,
     INTERRUPT_HIGH_PRIORITY,
 }interrupt_priority;
-# 15 "MCAL_Layer/ADC/../interrupt/internal_interrupt.h" 2
+# 15 "MCAL_Layer/ADC/../Interrupt/internal_interrupt.h" 2
 # 16 "MCAL_Layer/ADC/adc.h" 2
 # 1 "MCAL_Layer/ADC/adc_cfg.h" 1
 # 17 "MCAL_Layer/ADC/adc.h" 2

@@ -10,6 +10,8 @@
 
 #include "APP/application.h"
 #include "MCAL_Layer/ADC/adc.h"
+#include "MCAL_Layer/Timers/timer0.h"
+#include "MCAL_Layer/Timers/timer1.h"
 
 led_t led1 = {
     .port = PORTA_INDEX,
@@ -45,6 +47,32 @@ adc_config_t adc1 = {
     .volt_N_reference = ADC_VOLT_REF_DISABLE
 };
 
+void timer0_int(void){
+    led_toggle(&led1);
+}
+
+timer0_t timer0_obj = {
+  .TIMR0_InterruptHandler = timer0_int,
+  .mode = TIMER0_TIMER_MODE,
+  .preload = 3036,
+  .prescaler_status = TIMER0_PRESCALER_ENABLE_CFG,
+  .prescaler_val = TIMER0_PRESCALER_DIV_8,
+  .reg_size = TIMER0_16BIT_REGISTER_MODE
+};
+
+void timer1_int(void){
+    led_toggle(&led1);
+}
+
+timer1_t timer1_obj = {
+  .TIMR1_InterruptHandler = timer1_int,
+  .mode = TIMER1_TIMER_MODE_CFG,
+  .preload = 15536,
+  .prescaler = TIMER1_PRESCALER_DIV_2,
+  .osc_enable = TIMER1_OSC_DISABLE_CFG,
+  .rw_mode = TIMER1_16BITS_RW_MODE_CFG
+};
+
 int main() {
     led_init(&led1);
  
@@ -59,13 +87,16 @@ int main() {
 
     uint16 adc_res = 0;
     
+//    Timer0_Init(&timer0_obj);
+    Timer1_Init(&timer1_obj);
+    
     volatile Std_ReturnType ret = E_OK;
     
     for (;;) {
-        led_turn_on(&led1);
-        __delay_ms(100);
-        led_turn_off(&led1);
-        __delay_ms(100);
+//        led_turn_on(&led1);
+//        __delay_ms(100);
+//        led_turn_off(&led1);
+//        __delay_ms(100);
         ADC_Get_Conversion_Blocking(&adc1,ADC_CHANNEL_AN0,&adc_res);
         uint8 buff[6] = {0};
         convert_uint16_to_string(adc_res,buff);

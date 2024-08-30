@@ -20,4 +20,6 @@ APP/../MCAL_Layer/Interrupt/interrupt_gen_config.h  \
 APP/../MCAL_Layer/EEPROM/eeprom.h  \
 APP/../MCAL_Layer/EEPROM/../Interrupt/internal_interrupt.h  \
 MCAL_Layer/ADC/adc.h  \
-MCAL_Layer/ADC/adc_cfg.h 
+MCAL_Layer/ADC/adc_cfg.h  \
+MCAL_Layer/Timers/timer0.h  \
+MCAL_Layer/Timers/timer1.h 

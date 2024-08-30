@@ -4822,10 +4822,18 @@ typedef enum
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
+
 void RB4_ISR(uint8 RB_src);
 void RB5_ISR(uint8 RB_src);
 void RB6_ISR(uint8 RB_src);
 void RB7_ISR(uint8 RB_src);
+
+
+
+void TIMR0_ISR(void);
+void TIMR1_ISR(void);
+void TIMR2_ISR(void);
+void TIMR3_ISR(void);
 # 12 "MCAL_Layer/Interrupt/interrupt_manager.c" 2
 
 
@@ -4908,6 +4916,26 @@ void __attribute__((picinterrupt(("")))) InterruptManager(void)
     {
         RB7_Flag = 1;
         RB7_ISR(0);
+    }
+# 128 "MCAL_Layer/Interrupt/interrupt_manager.c"
+    if(1 == INTCONbits.TMR0IE && 1 == INTCONbits.TMR0IF)
+    {
+        TIMR0_ISR();
+    }
+
+    if(1 == PIE1bits.TMR1IE && 1 == PIR1bits.TMR1IF)
+    {
+        TIMR1_ISR();
+    }
+
+    if(1 == PIE1bits.TMR2IE && 1 == PIR1bits.TMR2IF)
+    {
+        TIMR2_ISR();
+    }
+
+    if(1 == PIE2bits.TMR3IE && 1 == PIR2bits.TMR3IF)
+    {
+        TIMR3_ISR();
     }
 # 187 "MCAL_Layer/Interrupt/interrupt_manager.c"
 }
