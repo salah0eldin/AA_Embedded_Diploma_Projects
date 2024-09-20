@@ -119,11 +119,11 @@ void __interrupt() InterruptManager(void)
     /*_________________________ RB6 END _________________________________*/
     /*_________________________ PORTB external on change interrupt end _________________________________*/
 
-//    if(INTERRUPT_ENABLE == PIE1bits.ADIE && INTERRUPT_OCCURR == PIR1bits.ADIF)
-//    {
-//        ADC_ISR(); /* ADC INTERRUPT */
-//    }
-//
+    if(INTERRUPT_ENABLE == PIE1bits.ADIE && INTERRUPT_OCCURR == PIR1bits.ADIF)
+    {
+        ADC_ISR(); /* ADC INTERRUPT */
+    }
+
     /*_________________________ TIMER START _________________________________*/
     if(INTERRUPT_ENABLE == INTCONbits.TMR0IE && INTERRUPT_OCCURR == INTCONbits.TMR0IF)
     {
@@ -144,45 +144,45 @@ void __interrupt() InterruptManager(void)
     {
         TIMR3_ISR(); /* TIMER3 INTERRUPT */
     }
-//    /*_________________________ TIMER END _________________________________*/
-//    /*_________________________ CCP START _________________________________*/
-//    if(INTERRUPT_ENABLE == PIE1bits.CCP1IE && INTERRUPT_OCCURR == PIR1bits.CCP1IF)
-//    {
-//        CCP1_ISR(); /* CCP1 INTERRUPT */
-//    }
-//
-//    if(INTERRUPT_ENABLE == PIE2bits.CCP2IE && INTERRUPT_OCCURR == PIR2bits.CCP2IF)
-//    {
-//        CCP2_ISR(); /* CCP2 INTERRUPT */
-//    }
-//    /*_________________________ CCP END ______________________________________*/
-//    /*_________________________ EUSART START _________________________________*/
-//    if(INTERRUPT_ENABLE == PIE1bits.TXIE && INTERRUPT_OCCURR == PIR1bits.TXIF)
-//    {
-//        EUSART_TX_ISR(); /* EUSART TX INTERRUPT */
-//    }
-//
-//    if(INTERRUPT_ENABLE == PIE1bits.RCIE && INTERRUPT_OCCURR == PIR1bits.RCIF)
-//    {
-//        EUSART_RX_ISR(); /* EUSART RX INTERRUPT */
-//    }
-//    /*_________________________ EUSART END _________________________________*/
-//    /*_________________________ SPI START _________________________________*/
-//    if(INTERRUPT_ENABLE == PIE1bits.SSPIE && INTERRUPT_OCCURR == PIR1bits.SSPIF && SSPCON1bits.SSPM <= 5)
-//    {
-//        SPI_ISR(); /* SPI INTERRUPT */
-//    }
-//    /*_________________________ SPI END _________________________________*/
-//    /*_________________________ I2C START _________________________________*/
-//    if(INTERRUPT_ENABLE == PIE1bits.SSPIE && INTERRUPT_OCCURR == PIR1bits.SSPIF && SSPCON1bits.SSPM >= 6)
-//    {
-//        I2C_ISR(); /* I2C INTERRUPT */
-//    }
-//    if(INTERRUPT_ENABLE == PIE2bits.BCLIE && INTERRUPT_OCCURR == PIR2bits.BCLIF)
-//    {
-//        I2C_BUS_COL_ISR(); /* I2C BUS COLLISION INTERRUPT */
-//    }
-//    /*_________________________ I2C END _________________________________*/
+    /*_________________________ TIMER END _________________________________*/
+    /*_________________________ CCP START _________________________________*/
+    if(INTERRUPT_ENABLE == PIE1bits.CCP1IE && INTERRUPT_OCCURR == PIR1bits.CCP1IF)
+    {
+        CCP1_ISR(); /* CCP1 INTERRUPT */
+    }
+
+    if(INTERRUPT_ENABLE == PIE2bits.CCP2IE && INTERRUPT_OCCURR == PIR2bits.CCP2IF)
+    {
+        CCP2_ISR(); /* CCP2 INTERRUPT */
+    }
+    /*_________________________ CCP END ______________________________________*/
+    /*_________________________ EUSART START _________________________________*/
+    if(INTERRUPT_ENABLE == PIE1bits.TXIE && INTERRUPT_OCCURR == PIR1bits.TXIF)
+    {
+        EUSART_TX_ISR(); /* EUSART TX INTERRUPT */
+    }
+
+    if(INTERRUPT_ENABLE == PIE1bits.RCIE && INTERRUPT_OCCURR == PIR1bits.RCIF)
+    {
+        EUSART_RX_ISR(); /* EUSART RX INTERRUPT */
+    }
+    /*_________________________ EUSART END _________________________________*/
+    /*_________________________ SPI START _________________________________*/
+    if(INTERRUPT_ENABLE == PIE1bits.SSPIE && INTERRUPT_OCCURR == PIR1bits.SSPIF && SSPCON1bits.SSPM <= 5)
+    {
+        SPI_ISR(); /* SPI INTERRUPT */
+    }
+    /*_________________________ SPI END _________________________________*/
+    /*_________________________ I2C START _________________________________*/
+    if(INTERRUPT_ENABLE == PIE1bits.SSPIE && INTERRUPT_OCCURR == PIR1bits.SSPIF && SSPCON1bits.SSPM >= 6)
+    {
+        I2C_ISR(); /* I2C INTERRUPT */
+    }
+    if(INTERRUPT_ENABLE == PIE2bits.BCLIE && INTERRUPT_OCCURR == PIR2bits.BCLIF)
+    {
+        I2C_BUS_COL_ISR(); /* I2C BUS COLLISION INTERRUPT */
+    }
+    /*_________________________ I2C END _________________________________*/
 
 }
 

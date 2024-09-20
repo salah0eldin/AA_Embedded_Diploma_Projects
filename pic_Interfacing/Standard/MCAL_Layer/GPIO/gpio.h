@@ -17,7 +17,8 @@
 //==================================================
 // Includes
 //==================================================
-#include <pic18f4620.h>
+//#include <pic18f46k20.h>
+#include <xc.h>
 #include "../std_types.h"
 #include "../device_config.h"
 
