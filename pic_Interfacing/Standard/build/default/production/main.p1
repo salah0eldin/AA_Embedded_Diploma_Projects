@@ -1,5 +1,55 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"1104 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 1104: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+[v F3153 `(v ~T0 @X0 0 tf ]
+"87 ./MCAL_Layer/I2C/../GPIO/gpio.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin_num direction logic ]
+"40 main.c
+[; ;main.c: 40: ext_interrupt_INTx_t int0_obj = {
+[c E3146 0 1 2 .. ]
+[n E3146 . INTERRUPT_EXTERNAL_INT0 INTERRUPT_EXTERNAL_INT1 INTERRUPT_EXTERNAL_INT2  ]
+[c E3138 0 1 .. ]
+[n E3138 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+[c E3142 0 1 .. ]
+[n E3142 . INTERRUPT_FALLING_EDGE INTERRUPT_RISING_EDGE  ]
+"99 ./APP/../MCAL_Layer/Interrupt/external_interrupt.h
+[; ;./APP/../MCAL_Layer/Interrupt/external_interrupt.h: 99: {
+[s S278 `*F3153 1 `S273 1 `E3146 1 `E3138 1 `E3142 1 ]
+[n S278 . EXT_InterruptHandler pin source priority edge ]
+"40 main.c
+[; ;main.c: 40: ext_interrupt_INTx_t int0_obj = {
+[c E3011 0 1 2 3 4 .. ]
+[n E3011 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2997 0 1 .. ]
+[n E2997 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
 [p mainexit ]
+"130 ./APP/../MCAL_Layer/Interrupt/external_interrupt.h
+[; ;./APP/../MCAL_Layer/Interrupt/external_interrupt.h: 130: Std_ReturnType Interrupt_INTx_Init(const ext_interrupt_INTx_t *ext_int);
+[v _Interrupt_INTx_Init `(uc ~T0 @X0 0 ef1`*CS278 ]
+"6380 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6380:     struct {
+[s S265 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S265 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6390
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6390:     struct {
+[s S266 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S266 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6400
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6400:     struct {
+[s S267 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S267 . . GIEL GIEH ]
+"6379
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6379: typedef union {
+[u S264 `S265 1 `S266 1 `S267 1 ]
+[n S264 . . . . ]
+"6406
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6406: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS264 ~T0 @X0 0 e@4082 ]
+"1824
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 1824: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -411,29 +461,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"36 main.c
+[; ;main.c: 36: void int0int(void){
+[v _int0int `(v ~T0 @X0 1 ef ]
+{
+[e :U _int0int ]
+[f ]
+"37
+[; ;main.c: 37:     (LATC ^= ((uint8)1 << 0));
+[e =^ _LATC -> << -> -> -> 1 `i `uc `i -> 0 `i `Vuc ]
+"38
+[; ;main.c: 38: }
+[e :UE 295 ]
+}
+"40
+[; ;main.c: 40: ext_interrupt_INTx_t int0_obj = {
+[v _int0_obj `S278 ~T0 @X0 1 e ]
+[i _int0_obj
+:U ..
+:U ..
+&U _int0int
+:U ..
+:U ..
+-> . `E3011 1 `uc
+-> -> 0 `i `uc
+-> . `E2997 1 `uc
+..
+..
+. `E3146 0
+-> -> 0 `i `E3138
+. `E3142 0
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"21 main.c
-[; ;main.c: 21: int main(){
+"49
+[; ;main.c: 49: int main(){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"23
-[; ;main.c: 23:     for (;;) {
+"50
+[; ;main.c: 50:     Interrupt_INTx_Init(&int0_obj);
+[e ( _Interrupt_INTx_Init (1 -> &U _int0_obj `*CS278 ]
+"51
+[; ;main.c: 51:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"52
+[; ;main.c: 52:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"53
+[; ;main.c: 53:     (TRISC &= (~((uint8)1 << 0)));
+[e =& _TRISC -> ~ << -> -> -> 1 `i `uc `i -> 0 `i `Vuc ]
+"56
+[; ;main.c: 56:     for (;;) {
 {
-[e :U 296 ]
-{
-"25
-[; ;main.c: 25:     }
-}
-[e $U 296  ]
 [e :U 297 ]
+{
+"57
+[; ;main.c: 57:     }
 }
-"27
-[; ;main.c: 27:     return (0);
+[e $U 297  ]
+[e :U 298 ]
+}
+"59
+[; ;main.c: 59:     return (0);
 [e ) -> 0 `i ]
-[e $UE 295  ]
-"28
-[; ;main.c: 28: }
-[e :UE 295 ]
+[e $UE 296  ]
+"60
+[; ;main.c: 60: }
+[e :UE 296 ]
 }
