@@ -1,7 +1,8 @@
+Description:
 
-## Description
+An embedded systems repo that has two projects one (Standard) structured with a modular MCAL and ECU layer design, Ideal for learning and integrating various embedded components. And the other one (Final) made using MCC (MPLAB Code Configurator) showcasing a data logging and monitoring system using the PIC18F4620 microcontroller. Features include real-time temperature monitoring, external EEPROM storage, and EUSART communication. And a proteus simulation file.
 
-This repository contains a comprehensive collection of embedded systems projects, including a specific project that logs or displays data using EUSART. The projects are structured into two main layers:
+## Standard Project
 
 - **MCAL Layer**: This includes drivers for:
   - GPIO
