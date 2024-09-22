@@ -76,9 +76,6 @@ This project showcases a comprehensive data logging and monitoring system, integ
   - User input via buttons and keypad
   - Display output on 7-segment displays and LCDs
 
-Contributions
-Contributions to improve the code and documentation are welcome! Please adhere to the project's contribution guidelines.
-
 Acknowledgments
 This project incorporates concepts and implementations learned during my embedded systems diploma,
 with inspiration and partial code derived from other repositories. Special thanks to https://github.com/MasameEh/PIC18F4620_Drivers/ for their contributions to the community.
