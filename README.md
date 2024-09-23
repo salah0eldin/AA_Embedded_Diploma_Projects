@@ -50,34 +50,14 @@ This project showcases a comprehensive data logging and monitoring system, integ
 
 ### Components Used
 
-- **Microcontroller**: PIC18F4620
+- **Microcontroller**: PIC18F46K20
 - **RTC Module**: (e.g., DS3231)
 - **Temperature Sensor**: (e.g., LM35)
 - **EEPROM**: (e.g., 24LC256)
 - **Development Environment**: MPLAB X IDE with XC8 Compiler
 
-### Project Structure
-
-- **MCAL Layer**: Drivers for basic functionalities including:
-  - GPIO
-  - ADC
-  - I2C
-  - SPI
-  - EUSART
-  - CCP
-  - Timers (0, 1, 2, 3)
-  - EEPROM
-  - Interrupts
-
-- **ECU Layer**: High-level control for:
-  - LED indicators
-  - Relay control for devices
-  - DC motor operation
-  - User input via buttons and keypad
-  - Display output on 7-segment displays and LCDs
-
 Acknowledgments
 This project incorporates concepts and implementations learned during my embedded systems diploma,
-with inspiration and partial code derived from other repositories. Special thanks to https://github.com/MasameEh/PIC18F4620_Drivers/ for their contributions to the community.
+with inspiration and partial code derived from other repositorie. Special thanks to https://github.com/MasameEh/PIC18F4620_Drivers/ for their contributions to the community.
 
 
